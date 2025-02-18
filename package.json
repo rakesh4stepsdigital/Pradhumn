@@ -38,6 +38,7 @@
     "crypto-js": "^4.2.0",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
+    "formidable": "^3.5.2",
     "framer-motion": "^12.4.3",
     "git-filter-repo": "^0.0.30",
     "jodit-react": "^5.2.14",
