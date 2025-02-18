@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import cookie from 'cookie';
-export function middleware(request) {
+export default function middleware(request) {
     const cookies = cookie.parse(request.headers.get('cookie') || '');
     const token = cookies.token;
     // console.log('Parsed cookies:', token); // Debugging output
