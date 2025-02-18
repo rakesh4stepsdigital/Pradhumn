@@ -24,7 +24,7 @@ export default function AdminIndex() {
     <div>
       {isLoggedIn ? <AdminDashboard /> : <Login page={page} />}
       {/* {isLoggedIn ? <AdminDashboard /> : <AdminDashboard />} */}
-      <h1></h1>
+      <h1>hi</h1>
     </div>
   );
 }

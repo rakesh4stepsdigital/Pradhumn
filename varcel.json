@@ -2,26 +2,49 @@
     "version": 2,
     "functions": {
       "api/**": {
-        "memory": 1024,       
-        "maxDuration": 30        
-        
+        "memory": 1024,            
+        "maxDuration": 30          
       }
     },
     "builds": [
       {
-        "src": "pages/api/**/*.js",     
-        "use": "@vercel/node"          
+        "src": "api/**",            
+        "use": "@vercel/node"
       },
       {
-        "src": "public/**",           
-        "use": "@vercel/static"        
+        "src": "public/**",         
+        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/index.html"          
+        "src": "/api/(.*)",       
+        "dest": "/api/$1"
+      },
+      {
+        "src": "/(.*)",           
+        "dest": "/public/$1"
       }
-    ]
+    ],
+    "cleanUrls": true,            
+    "redirects": [
+      {
+        "source": "/old-url",
+        "destination": "/new-url",
+        "permanent": true         
+      }
+    ],
+    "headers": [
+      {
+        "source": "/api/(.*)",       
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      }
+    ],
+    "alias": ["your-app-name.vercel.app"],  
+    "env": {
+      "NODE_ENV": "production"      
+    }
   }
   
