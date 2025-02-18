@@ -1,21 +1,21 @@
 {
     "version": 2,
     "functions": {
-      "api/**": {
-        "memory": 1024,            
-        "maxDuration": 30          
-      }
-    },
-    "builds": [
-      {
-        "src": "api/**",            
-        "use": "@vercel/node"
-      },
-      {
-        "src": "public/**",         
-        "use": "@vercel/static"
-      }
-    ],
+    "api/**": {
+      "memory": 2048, 
+      "maxDuration": 60 
+    }
+  },
+        "builds": [
+          {
+            "src": "api/**",
+            "use": "@vercel/node"
+          },
+          {
+            "src": "public/**",  
+            "use": "@vercel/static"
+          }
+        ],
     "routes": [
       {
         "src": "/api/(.*)",       
